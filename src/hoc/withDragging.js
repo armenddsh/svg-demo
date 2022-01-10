@@ -13,8 +13,7 @@ export function withDragging(Component) {
 
     const handlePointerDown = (event) => {
       if (event.target.type === "text" || event.target.type === "button") {
-        event.preventDefault();
-        event.stopPropagation();
+        // do nothing
       } else {
         const hsRect = ref.current.getBoundingClientRect();
 
