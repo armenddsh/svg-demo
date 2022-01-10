@@ -26,7 +26,6 @@ export function withDragging(Component) {
     const handlePointerMove = (event) => {
       if (isDragging) {
         const dataCopy = JSON.parse(JSON.stringify(data));
-        console.log("dataCopy", dataCopy);
         dataCopy.data.position.x = event.clientX - offset.x;
         dataCopy.data.position.y = event.clientY - offset.y;
 
