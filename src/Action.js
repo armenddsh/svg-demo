@@ -6,6 +6,7 @@ export function Action(props) {
       <i className="fab fa-yandex-international action-icon"></i>
       <input
         type="text"
+        className="action__input"
         placeholder="Action Condition"
         value={props.action.condition.eval}
       />

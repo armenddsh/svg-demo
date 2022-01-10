@@ -22,6 +22,7 @@ export function Situation(props) {
                 <div className="control">
                   <i className="far fa-comment-dots comment-icon"></i>
                   <input
+                    className="situation__input"
                     type="text"
                     placeholder="Reference filename"
                     value={props.data.situation}

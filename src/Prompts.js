@@ -9,7 +9,14 @@ export function Prompts(props) {
         {props.prompts &&
           props.prompts.map((prompts, i) =>
             prompts.prompt.map((prompt, j) => (
-              <li>{<Prompt key={`${i}-${j}`} text={prompt.text} />}</li>
+              <li>
+                {
+                  <Prompt
+                    key={`${i}-${j}`}
+                    text={prompt.text || prompt.audio || prompt.src}
+                  />
+                }
+              </li>
             ))
           )}
 

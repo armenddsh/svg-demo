@@ -12,10 +12,15 @@ export function withDragging(Component) {
     };
 
     const handlePointerDown = (event) => {
-      const hsRect = ref.current.getBoundingClientRect();
+      if (event.target.type === "text" || event.target.type === "button") {
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        const hsRect = ref.current.getBoundingClientRect();
 
-      setIsDragging(true);
-      setOffset({ x: event.clientX - hsRect.x, y: event.clientY - hsRect.y });
+        setIsDragging(true);
+        setOffset({ x: event.clientX - hsRect.x, y: event.clientY - hsRect.y });
+      }
     };
 
     const handlePointerMove = (event) => {
